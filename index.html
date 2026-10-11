@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="ht"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#c8102e"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Myder"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>Myder · Volim 5000</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7fb;--card:#fff;--tx:#14182b;--mut:#66708a;--red:#d0142f;--blue:#1f5fd1;--bd:#e3e7f1;--soft:#f0f3fa;--redsoft:#fdecee}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b1020;--card:#141b30;--tx:#eef1fa;--mut:#9aa6c4;--red:#ff5a68;--blue:#6ea2ff;--bd:#25304f;--soft:#1b2440;--redsoft:#3a1620}}
+:root[data-theme="dark"]{--bg:#0b1020;--card:#141b30;--tx:#eef1fa;--mut:#9aa6c4;--red:#ff5a68;--blue:#6ea2ff;--bd:#25304f;--soft:#1b2440;--redsoft:#3a1620}
+*{box-sizing:border-box}
+body{margin:0 auto;background:var(--bg);color:var(--tx);font:15px/1.45 "Trebuchet MS",system-ui,sans-serif;max-width:760px;padding:0 14px 30px}
+.num{font-variant-numeric:tabular-nums;font-weight:800;letter-spacing:-.02em}
+.hero{margin:0 -14px 14px;padding:20px 20px 18px;background:linear-gradient(135deg,#d0142f,#8e0b21);color:#fff;border-radius:0 0 28px 28px;border-bottom:5px solid #1f5fd1}
+.hero h1{margin:0 0 10px;font-size:14px}.hero small{opacity:.8;font-size:12px}.vol{font-size:42px;line-height:1.05}
+.bar{height:12px;background:rgba(255,255,255,.25);border-radius:9px;margin:12px 0 6px;overflow:hidden}.bar i{display:block;height:100%;background:#fff;border-radius:9px;transition:width .5s}
+.hrow{display:flex;justify-content:space-between;font-size:12.5px;gap:8px;flex-wrap:wrap}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:20px;padding:16px;margin-bottom:12px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(125px,1fr));gap:10px}.kv div{background:var(--soft);border-radius:14px;padding:10px 12px}
+.kv span{display:block;font-size:11.5px;color:var(--mut)}.kv b{font-size:18px}
+.good{color:var(--blue)}.bad{color:var(--red)}.mut{color:var(--mut);font-size:12.5px}
+.sh{display:flex;align-items:center;justify-content:space-between;gap:8px}.sh b{font-size:16px;text-align:center}
+.arr{width:42px;height:42px;border-radius:50%;border:1px solid var(--bd);background:var(--soft);color:var(--tx);font-size:16px;cursor:pointer}
+.dots{display:flex;gap:8px;justify-content:center;margin:10px 0}.dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--bd);display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff}
+.dot.G{background:var(--blue);border-color:var(--blue)}.dot.P{background:var(--red);border-color:var(--red)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn{border:0;border-radius:16px;padding:16px 8px;font:800 18px "Trebuchet MS",system-ui;color:#fff;cursor:pointer;line-height:1.2}
+.btn small{display:block;font-weight:400;font-size:12px;opacity:.92;margin-top:2px}.btn:active{transform:scale(.97)}.btn:disabled{opacity:.35}
+.btn:focus-visible,input:focus-visible,.arr:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.w{background:var(--blue)}.l{background:var(--red)}.ghost{background:var(--soft);color:var(--tx);border:1px solid var(--bd);padding:12px;font-size:14px}
+.msg{margin:12px 0 0;padding:12px 14px;border-radius:14px;font-weight:700}.msg.go{background:var(--soft);color:var(--blue)}.msg.no{background:var(--redsoft);color:var(--red)}.msg.yes{background:var(--blue);color:#fff}
+label{font-size:12px;color:var(--mut);display:block;margin-bottom:3px}
+input{width:100%;padding:11px;border-radius:10px;border:1px solid var(--bd);background:var(--soft);color:var(--tx);font:inherit}
+#stk{font-size:24px;font-weight:800;text-align:center}
+textarea{width:100%;height:70px;margin-top:8px;padding:10px;border-radius:10px;border:1px solid var(--bd);background:var(--soft);color:var(--tx);font:12px monospace}
+.pf{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin-top:12px}
+details summary{font-weight:700;cursor:pointer}
+.tw{overflow-x:auto;border-radius:16px;border:1px solid var(--bd);background:var(--card);margin-bottom:12px}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:12.5px}th{background:var(--red);color:#fff;padding:8px 4px}
+td{padding:6px 4px;text-align:center;border-top:1px solid var(--bd)}tr[data-i]{cursor:pointer}tr.cur td{background:var(--soft);font-weight:700}
+.note{font-size:11.5px;color:var(--mut);margin:10px 2px}
+.feed{max-height:280px;overflow-y:auto;display:flex;flex-direction:column;gap:8px;margin:10px 0}
+.b{max-width:88%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;font-size:14px}
+.b.u{align-self:flex-end;background:var(--blue);color:#fff}.b.a{align-self:flex-start;background:var(--soft)}
+.b.s{align-self:stretch;max-width:100%;background:var(--redsoft);color:var(--red);font-weight:700}
+.toast{position:fixed;left:14px;right:14px;top:calc(env(safe-area-inset-top,0px) + 10px);background:var(--red);color:#fff;padding:12px 14px;border-radius:14px;font-weight:700;z-index:9;display:none;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="toast" id="toast" role="alert"></div>
+<div class="hero"><h1>Myder · Kontwòl Volim Trade</h1><small>Volim ou fè</small>
+<div class="vol num" id="v1"></div><div class="bar"><i id="pb"></i></div><div class="hrow"><span id="h1"></span><span id="h2"></span></div></div>
+<div class="card" id="now"></div>
+<div class="card"><div class="kv" id="sum"></div></div>
+<div class="card"><b>Asistan</b> <span class="mut">(mande l nenpòt kesyon, li voye alèt kanpe tou)</span>
+<div class="feed" id="feed" aria-live="polite"></div>
+<div class="two" style="grid-template-columns:1fr auto"><input id="cm" placeholder="Mande m nenpòt kesyon..." autocomplete="off"><button class="btn w" id="cs" style="padding:10px 18px;font-size:15px">Voye</button></div>
+<div class="two" style="margin-top:8px"><button class="btn ghost" id="nt">Aktive notifikasyon</button><button class="btn ghost" id="cc">Efase chat la</button></div><div class="mut" id="nm" style="margin-top:6px"></div></div>
+<div class="tw"><table><thead><tr><th>Jou</th><th>Dat</th><th>Trade</th><th>Gen/Pèt</th><th>Volim jou a</th><th>Volim kimile</th><th>Rezilta</th><th>Balans fen jou</th></tr></thead><tbody id="tb"></tbody></table></div>
+<details class="card"><summary>Paramèt</summary><div class="pf" id="pf"></div>
+<div class="two" style="margin-top:12px"><input id="rb" type="number" step="any" inputmode="decimal" placeholder="Balans reyèl Pocket Option"><button class="btn ghost" id="ra">Ajiste balans</button></div></details>
+<details class="card"><summary>Sove / retabli done m</summary><textarea id="bk" aria-label="Sovgad"></textarea><div class="two" style="margin-top:8px"><button class="btn ghost" id="bc">Kopye</button><button class="btn ghost" id="br">Retabli</button></div><div class="mut" id="bm" style="margin-top:6px"></div></details>
+<details class="card"><summary>Mete l sou telefòn ou</summary><div class="mut" style="margin-top:8px">iPhone (Safari): Pataje → Sou ekran d'akèy → Ajoute.<br>Android (Chrome): 3 pwen → Ajoute sou ekran d'akèy.<br>Alèt yo parèt lè app la louvri. App la pa ka voye notifikasyon lè li fèmen nèt.</div></details>
+<div class="note">Volim = total montan ou mize (gen oswa pèt). Verifye kondisyon bonus la ak Pocket Option (limit tan, si pèt konte, retrè). Se yon zouti kalkil, pa yon garanti pwofi.</div>
+<button class="btn ghost" id="rs" style="width:100%">Efase tout done yo</button>
+<script>
+const K='pvol2',$=id=>document.getElementById(id);
+const iso=t=>{const x=new Date(t);return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')};
+let S={p:{b:200,v:5000,n:40,st:25,pay:92,mx:5,ml:3,fl:100,sd:iso(Date.now())},t:[],adj:0,vd:null,chat:[],lg:''};
+try{const x=JSON.parse(localStorage.getItem(K));if(x)S=Object.assign(S,x)}catch(e){}
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(S))}catch(e){}};
+const m=v=>(v<0?'-$':'$')+Math.abs(v).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});
+const m0=v=>(v<0?'-$':'$')+Math.abs(v).toLocaleString('en-US',{maximumFractionDigits:0});
+const LB=[['b','Balans kòmansman ($, depo+bonus)'],['v','Volim objektif ($)'],['n','Kantite jou'],['st','Mize defo pa trade ($)'],['pay','Payout (%)'],['mx','Trade max pa jou'],['ml','Pèt pou kanpe'],['fl','Balans minimòm ($)']];
+const D0=s=>new Date(s+'T00:00:00'),dayStr=i=>iso(D0(S.p.sd).getTime()+(i-1)*864e5);
+function calc(){const p=S.p,P=p.pay/100;let bal=p.b+S.adj,vol=0;const by={};
+ S.t.forEach(x=>{vol+=x.s;bal+=x.w?x.s*P:-x.s;(by[x.d]=by[x.d]||[]).push(x)});
+ const today=iso(Date.now()),dn=Math.max(1,Math.floor((D0(today)-D0(p.sd))/864e5)+1);
+ return{bal,vol,by,today,dn,P,rem:Math.max(0,p.v-vol)}}
+function info(c,sel){const p=S.p,tt=c.by[dayStr(sel)]||[],L=tt.filter(x=>!x.w).length;
+ const stop=tt.length>=p.mx?'Ou fè '+p.mx+' trade yo. Kanpe pou jou a.':L>=p.ml?L+' pèt. Kanpe pou jou a.':c.bal<p.fl?'Balans lan anba $'+p.fl+'. Kanpe epi reevalye.':'';
+ return{tt,L,stop,tv:tt.reduce((a,x)=>a+x.s,0)}}
+function toast(t){const e=$('toast');e.textContent=t;e.style.display='block';clearTimeout(toast.h);toast.h=setTimeout(()=>e.style.display='none',7000)}
+function bot(r,t){S.chat.push({r,t,at:Date.now()});S.chat=S.chat.slice(-40);save();feed()}
+function notify(t){bot('s',t);toast(t);try{navigator.vibrate&&navigator.vibrate([100,50,100])}catch(e){}try{if('Notification' in window&&Notification.permission==='granted')new Notification('Plan Trading',{body:t})}catch(e){}}
+function feed(){const f=$('feed');f.innerHTML=S.chat.length?S.chat.map(x=>`<div class="b ${x.r}">${x.r=='s'?'ALÈT · ':''}${x.t.replace(/[<>&]/g,ch=>({'<':'&lt;','>':'&gt;','&':'&amp;'}[ch]))}</div>`).join(''):'<div class="mut">Mande m nenpòt kesyon, sou trading oswa nenpòt lòt bagay.</div>';f.scrollTop=f.scrollHeight}
+function render(){
+ const p=S.p,c=calc(),P=c.P,pct=Math.min(1,c.vol/p.v),sel=Math.min(p.n,Math.max(1,S.vd||c.dn)),I=info(c,sel),stk=S.stk||p.st,done=c.vol>=p.v,isT=sel==c.dn;
+ $('v1').textContent=m0(c.vol)+' / '+m0(p.v);$('pb').style.width=pct*100+'%';$('h1').textContent=(pct*100).toFixed(1)+'% fini';$('h2').textContent='Rete: '+m(c.rem);
+ const dl=Math.max(1,p.n-sel+1),need=Math.max(0,c.rem/dl-I.tv),trs=Math.ceil(need/stk),plan=p.v/p.n,ahead=c.vol-plan*(Math.min(c.dn,p.n)-1)-(c.by[c.today]||[]).reduce((a,x)=>a+x.s,0);
+ const stop=I.stop||(stk>c.bal?'Mize a pi gwo pase balans lan.':'');
+ let dots='';for(let k=0;k<Math.max(p.mx,I.tt.length);k++){const x=I.tt[k];dots+=`<span class="dot ${x?(x.w?'G':'P'):''}">${x?(x.w?'G':'P'):''}</span>`}
+ $('now').innerHTML=`<div class="sh"><button class="arr" id="pv" aria-label="Jou anvan" ${sel<=1?'disabled':''}>◀</button><b>Jou ${sel} sou ${p.n}<br><span class="mut">${dayStr(sel)}${isT?' · jodi a':''}</span></b><button class="arr" id="nx" aria-label="Jou apre" ${sel>=p.n?'disabled':''}>▶</button></div>
+ ${done?`<div class="msg yes">VOLIM ATEN! Ou fè ${m0(c.vol)}. Verifye ak Pocket Option si ou ka mande retrè bonus la.</div>`:`<div class="kv" style="margin:10px 0"><div><span>Volim jou a</span><b class="num">${m0(I.tv)}</b></div><div><span>Pou rete sou plan</span><b class="num">${m0(need)}</b></div><div><span>Trade ki rete (a ${m0(stk)})</span><b class="num">${trs}</b></div></div>`}
+ <div class="dots">${dots}</div><label>Montan mize pou pwochen trade ($)</label><input id="stk" type="number" step="any" inputmode="decimal" value="${stk}">
+ <div class="mut" style="text-align:center;margin:4px 0 10px">${(stk/Math.max(c.bal,1)*100).toFixed(1)}% nan balans lan</div>
+ <div class="two"><button class="btn w" id="aw" ${stop||done?'disabled':''}>GEN<small>+${m(stk*P)}</small></button><button class="btn l" id="al" ${stop||done?'disabled':''}>PÈT<small>−${m(stk)}</small></button></div>
+ ${stop&&!done?`<div class="msg no">${stop}</div><button class="btn w" id="gn" style="width:100%;margin-top:10px;padding:14px" ${sel>=p.n?'disabled':''}>Ale nan jou swivan ▶</button>`:!done?`<div class="msg go">Kontinye. ${I.tt.length}/${p.mx} trade.</div>`:''}
+ <div class="two" style="margin-top:10px"><button class="btn ghost" id="un" ${I.tt.length?'':'disabled'}>Anile dènye trade jou a</button><button class="btn ghost" id="td" ${isT?'disabled':''}>Retounen jodi a</button></div>`;
+ const w=S.t.filter(x=>x.w).length,cell=(k,v,cl)=>`<div><span>${k}</span><b class="num ${cl||''}">${v}</b></div>`;
+ $('sum').innerHTML=cell('Balans aktyèl',m(c.bal),c.bal>=p.b?'good':'bad')+cell('Pwofi / pèt',m(c.bal-p.b),c.bal>=p.b?'good':'bad')+cell('Trade fèt',S.t.length)+cell('Gen / Pèt',w+' / '+(S.t.length-w))+cell('Win rate',S.t.length?(w/S.t.length*100).toFixed(1)+'%':'-')+cell('Avans vs plan',m0(ahead),ahead<0?'bad':'good');
+ let run=p.b+S.adj,cum=0,rows='';
+ for(let i=1;i<=p.n;i++){const d=dayStr(i),a=c.by[d]||[],v=a.reduce((s,x)=>s+x.s,0),r=a.reduce((s,x)=>s+(x.w?x.s*P:-x.s),0);cum+=v;run+=r;
+  rows+=`<tr data-i="${i}" class="${i==sel?'cur':''}"><td><b>${i}</b></td><td>${d.slice(5)}</td><td>${a.length||'-'}</td><td>${a.length?a.filter(x=>x.w).length+'/'+a.filter(x=>!x.w).length:'-'}</td><td>${v?m0(v):'-'}</td><td><b>${m0(cum)}</b></td><td class="${r<0?'bad':r>0?'good':''}">${a.length?m(r):'-'}</td><td>${a.length||d<=c.today?m(run):''}</td></tr>`}
+ $('tb').innerHTML=rows;
+ const go=i=>{S.vd=i==c.dn?null:Math.min(p.n,Math.max(1,i));save();render()};
+ const add=wn=>{const s=parseFloat($('stk').value);if(!(s>0))return;const i0=I;S.stk=s;S.t.push({d:dayStr(sel),s,w:wn?1:0,at:Date.now()});save();const c1=calc(),i1=info(c1,sel);
+  try{navigator.vibrate&&navigator.vibrate(30)}catch(e){}
+  if(c1.vol>=p.v&&c.vol<p.v)notify('VOLIM ATEN! Ou rive '+m0(c1.vol)+'. Verifye retrè bonus la ak Pocket Option.');
+  else if(i1.stop&&!i0.stop)notify('KANPE: '+i1.stop+' Balans: '+m(c1.bal)+'.');
+  [.25,.5,.75].forEach(q=>{if(c1.vol/p.v>=q&&c.vol/p.v<q)bot('s','Ou rive '+q*100+'% nan volim lan ('+m0(c1.vol)+').')});render()};
+ $('pv').onclick=()=>go(sel-1);$('nx').onclick=()=>go(sel+1);$('td').onclick=()=>go(c.dn);if($('gn'))$('gn').onclick=()=>go(sel+1);
+ $('stk').onchange=()=>{const s=parseFloat($('stk').value);if(s>0){S.stk=s;save();render()}};
+ if($('aw')){$('aw').onclick=()=>add(1);$('al').onclick=()=>add(0)}
+ $('un').onclick=()=>{const d=dayStr(sel);for(let k=S.t.length-1;k>=0;k--)if(S.t[k].d==d){S.t.splice(k,1);break}save();render()};
+ document.querySelectorAll('#tb tr').forEach(e=>e.onclick=()=>{go(+e.dataset.i);window.scrollTo(0,0)})}
+// bot
+let samp=null,busy=false;try{window.claude&&window.claude.use('sample').then(s=>samp=s,()=>{})}catch(e){}
+const RULES="Itilizatè a rele Myder. Ou se yon asistan IA jeneral, tankou Claude. Reponn nenpòt kesyon sou nenpòt sijè (pa sèlman trading): eksplikasyon, konsèy, lekti, tradiksyon, ekriti, matematik, lavi chak jou. Pale natirèl, tankou yon moun, nan lang itilizatè a ap itilize (kreyòl ayisyen si li ekri an kreyòl). Adapte longè a: kout pou kesyon senp, pi long lè li mande eksplikasyon. ETA APP gen sitiyasyon plan trading li a: itilize l sèlman si kesyon an gen rapò ak trading. Sou trading ak lajan: di verite sou risk, pa garanti pwofi. Si li vle kontinye trade apre yon alèt kanpe oswa double mize a, rete fèm men dous.";
+function stateTxt(){const c=calc(),p=S.p,sel=Math.min(p.n,Math.max(1,S.vd||c.dn)),I=info(c,sel);return`jou ${sel}/${p.n}, volim ${c.vol.toFixed(0)}/${p.v}, rete ${c.rem.toFixed(0)}, balans ${c.bal.toFixed(2)}, trade jou a ${I.tt.length} (${I.tt.length-I.L} gen, ${I.L} pèt), mize defo ${S.stk||p.st}, ${I.stop?'KANPE: '+I.stop:'ka kontinye'}`}
+function localReply(t){const c=calc(),p=S.p,s=t.toLowerCase(),sel=Math.min(p.n,Math.max(1,S.vd||c.dn)),I=info(c,sel);
+ if(/kanpe|kontinye|poze|stop/.test(s))return I.stop?'Wi, kanpe: '+I.stop+' Ale repoze, demen w ap retounen ak yon tèt kalm.':'Ou ka kontinye. Ou fè '+I.tt.length+'/'+p.mx+' trade, '+I.L+'/'+p.ml+' pèt.';
+ if(/volim|rete|konbyen/.test(s))return'Volim ou: '+m0(c.vol)+' sou '+m0(p.v)+'. Rete '+m0(c.rem)+', sa fè apeprè '+m0(c.rem/Math.max(1,p.n-sel+1))+' pa jou.';
+ if(/balans|kob|lajan/.test(s))return'Balans ou: '+m(c.bal)+' ('+m(c.bal-p.b)+' depi kòmansman).';
+ if(/jodi|jou/.test(s))return'Jou '+sel+' sou '+p.n+'. Ou fè '+I.tt.length+' trade ('+(I.tt.length-I.L)+' gen, '+I.L+' pèt).';
+ return'Mwen kapab di w balans ou, volim ou, konbyen ki rete, ak si ou dwe kanpe. (Chat konplè disponib sèlman andedan Claude.) Alèt kanpe yo toujou mache.'}
+async function ask(){const inp=$('cm'),t=inp.value.trim();if(!t||busy)return;inp.value='';bot('u',t);
+ if(!samp){bot('a',localReply(t));return}
+ busy=true;$('cs').disabled=true;let turns=[];S.chat.filter(x=>x.r!='s').slice(-20).forEach(x=>{const r=x.r=='u'?'user':'assistant';if(turns.length&&turns[turns.length-1].role==r)turns[turns.length-1].content+='\n'+x.t;else turns.push({role:r,content:x.t})});
+ while(turns.length&&turns[0].role!='user')turns.shift();turns[0].content=RULES+'\n\n'+turns[0].content;turns[turns.length-1].content='[ETA APP (itilize sèlman si sa gen rapò ak trading): '+stateTxt()+']\n'+turns[turns.length-1].content;
+ const idx=S.chat.length;S.chat.push({r:'a',t:'...',at:Date.now()});feed();
+ try{const{text}=await samp(turns,{cache:false,onText:({text})=>{S.chat[idx].t=text;feed()}});S.chat[idx].t=text}
+ catch(e){S.chat[idx].t=e.text||(e.code=='not_granted'?'Ou pa otorize chat la. Alèt yo toujou mache.':e.code=='rate_limited'?'Tann yon ti moman epi eseye ankò.':'Mwen pa ka reponn kounye a.')}
+ busy=false;$('cs').disabled=false;save();feed()}
+$('cs').onclick=ask;$('cm').onkeydown=e=>{if(e.key=='Enter')ask()};$('cc').onclick=()=>{S.chat=[];save();feed()};
+$('nt').onclick=async()=>{try{if(!('Notification' in window))throw 0;const r=await Notification.requestPermission();$('nm').textContent=r=='granted'?'Notifikasyon aktive (sèlman lè app la louvri).':'Notifikasyon bloke. Alèt yo toujou parèt nan app la.'}catch(e){$('nm').textContent='Notifikasyon sistèm pa disponib isit la. Alèt yo parèt nan app la ak vibrasyon.'}};
+// paramèt, sovgad
+$('pf').innerHTML=LB.map(([k,l])=>`<div><label>${l}</label><input type="number" step="any" data-p="${k}" value="${S.p[k]}"></div>`).join('')+`<div><label>Dat kòmansman</label><input type="date" id="sd" value="${S.p.sd}"></div>`;
+document.querySelectorAll('[data-p]').forEach(e=>e.onchange=()=>{const v=parseFloat(e.value),k=e.dataset.p;if(v>0&&isFinite(v))S.p[k]=v;S.p.n=Math.round(S.p.n);e.value=S.p[k];S.stk=null;save();render()});
+$('sd').onchange=()=>{if($('sd').value){S.p.sd=$('sd').value;save();render()}};
+$('ra').onclick=()=>{const v=parseFloat($('rb').value);if(!(v>=0))return;S.adj=0;S.adj=v-calc().bal;save();render();$('rb').value=''};
+$('bc').onclick=()=>{const t=JSON.stringify(S);$('bk').value=t;try{navigator.clipboard.writeText(t).then(()=>$('bm').textContent='Kopye!',()=>{$('bk').select();$('bm').textContent='Chwazi tèks la epi kopye l.'})}catch(e){$('bk').select();$('bm').textContent='Chwazi tèks la epi kopye l.'}};
+$('br').onclick=()=>{try{const x=JSON.parse($('bk').value);if(!x.p||!Array.isArray(x.t))throw 0;S=Object.assign({p:{},t:[],adj:0,vd:null,chat:[],lg:''},x);save();render();feed();$('bm').textContent='Retabli.'}catch(e){$('bm').textContent='Tèks la pa valid.'}};
+let arm=0;$('rs').onclick=function(){if(!arm){arm=1;this.textContent='Klike ankò pou konfime';setTimeout(()=>{arm=0;this.textContent='Efase tout done yo'},3000)}else{S.t=[];S.adj=0;S.stk=null;S.vd=null;arm=0;this.textContent='Efase tout done yo';save();render()}};
+render();feed();
+{const c=calc();if(S.lg!=c.today&&c.dn<=S.p.n){S.lg=c.today;bot('s','Bonjou Myder! Jodi se jou '+c.dn+'/'+S.p.n+'. Pou rete sou plan, ou bezwen apeprè '+m0(c.rem/Math.max(1,S.p.n-c.dn+1))+' volim jodi a.')}}
+</script></body></html>
